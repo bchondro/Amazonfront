@@ -1,19 +1,20 @@
 // we're importing the core Firebase library, as well as the
 // functions for authentication and the Firestore database
-import firebase from "firebase/compat/app";
-import { getAuth } from "firebase/auth";
+
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
 
+import firebase from "firebase/compat/app";
+import { getAuth } from "firebase/auth";
+
 // Your web app's Firebase configuration for the Firebase project you created in the Firebase console
 const firebaseConfig = {
-  apiKey: "AIzaSyCGtinmGbQrgd-eafZ2Ah_ixXmqKEuiyCk",
-  authDomain: "sep-449604.firebaseapp.com",
-  projectId: "sep-449604",
-  storageBucket: "sep-449604.firebasestorage.app",
-  messagingSenderId: "90052952206",
-  appId: "1:90052952206:web:14c6b97cc98119980909df",
-  measurementId: "G-17JFSPSBWH",
+  apiKey: "AIzaSyAVBu7WNS5tFz7uXBOkku300C-jZW5ZorU",
+  authDomain: "e-6bd4e.firebaseapp.com",
+  projectId: "e-6bd4e",
+  storageBucket: "e-6bd4e.firebasestorage.app",
+  messagingSenderId: "1043965336355",
+  appId: "1:1043965336355:web:8693a6bfb463f9561c4a96"
 };
 
 // Initialize the Firebase app. This creates a new instance of the Firebase app, which is the entry point for all  Firebase functionality

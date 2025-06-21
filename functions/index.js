@@ -6,8 +6,8 @@ dotenv.config();
 const stripeSec = process.env.STRIPE_KEY;
 
 if (!stripeSec) {
-  console.error("Stripe key is missing");
-  throw new Error("Stripe key is missing");
+    console.error("Stripe key is missing");
+    throw new Error("Stripe key is missing");
 }
 
 const stripe = require("stripe")(stripeSec);
@@ -22,31 +22,31 @@ app.use(cors({ origin: true }));
 app.use(express.json());
 setGlobalOptions({ maxInstances: 100 });
 app.get("/", (req, res) => {
-  res.status(200).json({
-    message: "success",
-  });
+    res.status(200).json({
+        message: "success",
+    });
 });
 
 app.post("/payment/create", async (req, res) => {
-  const total = parseInt(req.query.total);
-  if (total > 0) {
-    const paymentIntent = await stripe.paymentIntents.create({
-      amount: total,
-      currency: "USD",
-    });
+    const total = parseInt(req.query.total);
+    if (total > 0) {
+        const paymentIntent = await stripe.paymentIntents.create({
+            amount: total,
+            currency: "USD",
+        });
 
-    res.status(200).json({
-      // paymentIntent
-      clientPaymentSecret: paymentIntent.client_secret,
-    });
+        res.status(200).json({
+            // paymentIntent
+            clientPaymentSecret: paymentIntent.client_secret,
+        });
 
-    // console.log(`total payment requested is: ${total}`)
-    // res.send(`total payment requested is: ${total}`)
-  } else {
-    res.status(403).json({
-      message: "Payment amount must be greater than zero (0).",
-    });
-  }
+        // console.log(`total payment requested is: ${total}`)
+        // res.send(`total payment requested is: ${total}`)
+    } else {
+        res.status(403).json({
+            message: "Payment amount must be greater than zero (0).",
+        });
+    }
 });
 
 exports.api = onRequest(app);

@@ -1,24 +1,29 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Landing from "../Pages/Landing/Landing";
-import Auth from "../Pages/Auth/Auth";
-import Payment from "../Pages/Payment/Payment";
-import Cart from "../Pages/Cart/Cart";
-import Orders from "../Pages/Orders/Orders";
-import Results from "../Pages/Results/Results";
-import ProductDetail from "../Pages/ProductDetail/ProductDetail";
-import Product from "../components/Product/Product";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
-//for stripe
+import Auth from "../Pages/Auth/Auth";
+import Cart from "../Pages/Cart/Cart";
 import { Elements } from "@stripe/react-stripe-js";
+import Landing from "../Pages/Landing/Landing";
+import Orders from "../Pages/Orders/Orders";
+import PageNotFound from "../Pages/PageNotFound/PageNotFound";
+import Payment from "../Pages/Payment/Payment";
+import Product from "../components/Product/Product";
+import ProductDetail from "../Pages/ProductDetail/ProductDetail";
+import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
+import React from "react";
+import Results from "../Pages/Results/Results";
 import { loadStripe } from "@stripe/stripe-js";
 
-import PageNotFound from "../Pages/PageNotFound/PageNotFound";
-import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
+//for stripe
+
+
+
+
+
 
 //provide public key and load it to stirpe
 const stripePromise = loadStripe(
-  "pk_test_51MGmrQI0cImNYz5306vl4LsTgnfmatw0PtJsWd9QZHCtXjq89hJljpCFC8TWRUWZ6Akfux2ureY6zolpeGXahBEd00i3B5GxNX"
+  "pk_test_51RUsh3FQ3VGFalqJL1qqaCG11L2YWaoMznJFiSZWvDiBWtrirVAcQjCW1e4qUV7jyeE51WPlQTd5awokqjAv3Z9e009Rz7UR3h"
 );
 
 function AppRouter() {
